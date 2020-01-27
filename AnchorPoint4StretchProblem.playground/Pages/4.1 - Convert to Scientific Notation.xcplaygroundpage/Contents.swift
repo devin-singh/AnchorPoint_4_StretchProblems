@@ -13,3 +13,17 @@
 import UIKit
 
 //: [Next](@next)
+
+
+
+func convertToScientificNotation(num: Double) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .scientific
+    formatter.positiveFormat = "0.###E^0"
+    formatter.exponentSymbol = " x 10 ^ "
+    guard let sciNotation = formatter.string(for: num) else { return "" }
+    return sciNotation
+}
+
+
+convertToScientificNotation(num: -12.3415)
